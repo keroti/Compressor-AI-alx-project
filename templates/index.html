@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Compressor AI</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <h1>Compressor AI</h1>
-    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
-      <input type="file" name="file">
-      <button type="submit">Upload and compress</button>
+    <form id="upload-form">
+        <input type="file" name="image" id="image-input" accept="image/*" required>
+        <button type="submit">Compress</button>
     </form>
+
+    <div id="image-preview"></div>
+
 </body>
 </html>
