@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section id="welcome-section">
+        <h1>About Compressor AI</h1>
+        <p id="about_p">Our web app allows you to upload an image and compress it using advanced AI technology. The compressed image can be easily downloaded. Our simple and user-friendly interface ensures that anyone can use the app without difficulty. We welcome feedback, and the app has been thoroughly tested for performance and scalability.</p>
+        <img id="sample" src="{{ url_for('static', filename='Images/sample.png')}}" alt="sample">
+    </section>
+{% endblock content %}

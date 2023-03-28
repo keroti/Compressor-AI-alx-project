@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    {% if title %}
+        <title>Compressor AI - {{ title }}</title>
+    {% else %}
+        <title>Compressor AI</title>
+    {% endif %}
+    <link rel="icon" href="{{ url_for('static', filename='Images/favicon2.png')}}" type="image/png">
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js')}}" defer></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='preview.js')}}" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav id="navbar">
+            <ul>
+                <li><a href="{{ url_for(endpoint='home')}}">Home</a></li>
+                <li><a href="{{ url_for(endpoint='about')}}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="container">
+        <div class="row">
+            {% block content %}{% endblock %}
+        </div>
+        <section id="contacts">
+            <h2>Let's work together...</h2>
+            <p>To create amazing pictures</p>
+            <div id="social">
+                <p><img src="{{ url_for('static', filename='Images/facebook-5-512.png') }}" class="logo" alt="logo" width="50px" height="50px"> <a href="https://www.facebook.com/peter.kigan.7" target="_blank">facebook</a></p>
+                <p><img src="{{ url_for('static', filename='Images/github_PNG40.png')}}" class="logo" alt="logo" width="50px" height="50px"> <a href="https://github.com/keroti" target="_blank">github</a></p>
+                <p><img src="{{ url_for('static', filename='Images/twitter-512.png')}}" class="logo" alt="logo" width="50px" height="50px"> <a href="https://twitter.com/peter_kerotii" target="_blank">twitter</a></p>
+                
+            </div>
+            <hr>
+            <footer>
+                
+                <p>** All uploaded images are deleted after 6 hours **</p>
+                <p>© Created by keroti</p>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
