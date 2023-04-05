@@ -91,7 +91,7 @@ button[type="submit"]:hover {
     background-color: rgb(118, 40, 40);
 }
 
-.image-preview {
+.image-previews {
     height: 250px;
     width: auto;
     object-fit: cover;
@@ -228,6 +228,7 @@ footer{
     width: fit-content;
     
 }
+
 @media(max-width: 800px){
     body {
         overflow-x: hidden;
@@ -257,5 +258,11 @@ footer{
     }
     .content-section {
         width: 60vw;
+    }
+    .image-previews {
+        height: 100px;
+        width: auto;
+        object-fit: cover;
+        margin: 5px;
     }
 }
