@@ -8,11 +8,13 @@
   <img src = "https://github.com/keroti/Landing_page/blob/main/Images/Screenshot%202023-04-06%20223823.png?raw=true"></img>
   <br />
 </p>
+
 ## Deployed Site and Final Project Blog Article
 <p >
   You can find the deployed site <a href="https://compressor-ai.herokuapp.com/" target="_blank">Here</a>. Additionally, you can read the final project blog article <a href="https://compressor-ai.herokuapp.com/" target="_blank">Here</a>
   <br /> 
 </p>
+
 ## authors
 Peter Keroti < peterkeroti55@gmail.com >
 
