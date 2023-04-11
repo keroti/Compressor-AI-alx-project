@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const app = {
     config: {
-      RAPIDAPI_API_KEY: 'your_api_key_here'
+      RAPIDAPI_API_KEY: 'LxT2Vq6WFS7qmX7aPG8ok1FYjeraiQjj'
     }
   };
 
