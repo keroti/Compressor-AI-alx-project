@@ -19,3 +19,8 @@
 Peter Keroti < peterkeroti55@gmail.com >
 
 ## usage
+- Faster Website Load Times: Large image files can slow down website load times, leading to a poor user experience. Compressor AI can be used to compress images on a webpage, reducing the file size and improving website performance.
+- Reduced Bandwidth Usage: Compressing images can also reduce the amount of bandwidth used when loading a webpage, making it faster and more efficient for users with slower internet connections or limited data plans
+- More Efficient Storage: Compressing images can also help to save space on servers or cloud storage, making it more cost-effective for website owners to store large volumes of images.
+- Improved Social Media Sharing: Compressed images are easier and quicker to share on social media platforms, as they take up less space and load faster on users' devices. This can help to increase engagement and reach for content creators.
+- Mobile Optimization: Compressed images are especially important for mobile optimization, as mobile devices often have slower internet speeds and limited data plans. By compressing images on a webpage, users can have a better mobile browsing experience with faster load times and reduced data usage.
