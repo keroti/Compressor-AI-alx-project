@@ -3,45 +3,39 @@ $(document).ready(function () {
     config: {
       RAPIDAPI_API_KEY: 'a550036d08msh0d1430c3f64599cp15b8aajsn46bd9d79d7c7'
     }
-  };
+  }; 
   
-  // When an image is selected
-  $('#image-input').on('change', function () {
-    const files = $(this).prop('files');
-    $('#image-preview').html('');
-    $.each(files, function (index, file) {
-      const reader = new FileReader();
-      reader.onload = function (event) {
-        const img = $('<img>', {
-          class: 'image-previews',
-          src: event.target.result
-        });
-        $('#image-preview').append(img);
-        
-        // Compress the image and display the result
-        const formData = new FormData();
-        formData.append('image', file);
-        
-        fetch('https://megaoptim-image-compression.p.rapidapi.com/optimize', {
-          method: 'POST',
-          headers: {
-            'X-RapidAPI-Host': 'megaoptim-image-compression.p.rapidapi.com',
-            'X-RapidAPI-Key': app.config['RAPIDAPI_API_KEY'],
-            'Content-Type': 'image/jpeg'
-          },
-          body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-          // Poll for the result of the compression
-          pollForResult(data.process_id);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-      };
-      reader.readAsDataURL(file);
+  const fileInput = document.querySelector('#fileInput');
+  const imagePreview = document.querySelector('#imagePreview');
+  
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      // Compress the image and display the result
+      const formData = new FormData();
+      formData.append('image', file);
+
+      fetch('https://megaoptim-image-compression.p.rapidapi.com/optimize', {
+        method: 'POST',
+        headers: {
+          'X-RapidAPI-Host': 'megaoptim-image-compression.p.rapidapi.com',
+          'X-RapidAPI-Key': app.config['RAPIDAPI_API_KEY'],
+          'Content-Type': 'image/jpeg'
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Poll for the result of the compression
+        pollForResult(data.process_id);
+      })
+      .catch(error => {
+        console.error(error);
+      });
     });
+    reader.readAsDataURL(file);
   });
   
   function pollForResult(processId) {
@@ -56,6 +50,7 @@ $(document).ready(function () {
     .then(response => response.json())
     .then(data => {
       if (data.status === 'success') {
+        // Compression is complete
         const compressedImage = new Image();
         compressedImage.src = `data:image/${data.format};base64,${data.data}`;
         imagePreview.appendChild(compressedImage);
@@ -81,3 +76,4 @@ $(document).ready(function () {
     });
   }
 });
+
