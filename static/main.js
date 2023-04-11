@@ -5,7 +5,7 @@ $(document).ready(function () {
     }
   }; 
   
-  const fileInput = document.querySelector('#fileInput');
+  const fileInput = document.querySelector('#image-input');
   const imagePreview = document.querySelector('#imagePreview');
   
   fileInput.addEventListener('change', () => {
